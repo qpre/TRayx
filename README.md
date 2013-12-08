@@ -1,4 +1,4 @@
 TRayx
-=====
+-----
 
-Yet another attempt on making web based live ray-tracer
+A web based live RayTracer

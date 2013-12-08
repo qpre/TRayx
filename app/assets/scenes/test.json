@@ -1,0 +1,12 @@
+[{
+  "title": "test",
+  "objects": [
+    {
+      "type": "sphere",
+      "x": 0,
+      "y": 1,
+      "z": 0,
+      "radius": 3
+    }
+  ]
+}]
