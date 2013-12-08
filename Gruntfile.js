@@ -23,12 +23,17 @@ module.exports = function(grunt) {
       }
     },
     
+    bower: {
+      install: {}
+    },
+    
     copy: {
       app: {
         files: [
           // deploying files into build dir
           {expand: true, flatten: true, src: ['app/assets/style/*'], dest: 'build/assets/style/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/assets/img/*'], dest: 'build/assets/img/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['app/assets/scenes/*'], dest: 'build/assets/scenes/', filter: 'isFile'},
           {expand: true, cwd: 'app/extern/', src: '**/*', dest: 'build/extern/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/*.html'], dest: 'build/'},
         ]
@@ -53,7 +58,7 @@ module.exports = function(grunt) {
         css: {
             files: ['app/assets/style/**/*.css'],
         },
-        css: {
+        scenes: {
             files: ['app/assets/scenes/**/*.json'],
         },
         img: {
@@ -100,9 +105,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-bower-task');
 
   // Tasks
-  grunt.registerTask('build', ['clean','coffee', 'copy']);
+  grunt.registerTask('build', ['clean', 'bower:install', 'coffee', 'copy']);
   grunt.registerTask('server', function (target) {
       if (target === 'build') {
           return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
