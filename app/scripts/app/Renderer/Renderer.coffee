@@ -31,14 +31,16 @@ define(['app/Types/ColorRGBA'], (ColorRGBA) ->
       @context.putImageData(@imageData, 0, 0)
       
     setPixel: (x, y, color) ->
-      offset = (x * y) * 4
+      
+      offset = (x * 4) + (y * 800 * 4)
+      
       if (offset < @pixelData.length)
         @pixelData[offset]      = color.r
         @pixelData[offset + 1]  = color.g
         @pixelData[offset + 2]  = color.b
         @pixelData[offset + 3]  = color.a
       else
-        console.err "TRayx: trying to access overflown offset on pixel map"
+        console.error "TRayx: trying to access overflown offset on pixel map:" + offset
         
     print: () ->
       @context.putImageData(@imageData, 0, 0)
