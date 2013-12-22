@@ -1,4 +1,4 @@
-define(['jquery', "app/Scene"], ($, Scene) ->
+define(['jquery', "app/Scene/Scene"], ($, Scene) ->
   class TRayx
     scene: null
     

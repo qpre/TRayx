@@ -1,4 +1,4 @@
-define(["app/Maths/Vector3f"], (Vector3f) ->
+define(["app/Types/Vector3f"], (Vector3f) ->
   class Ray
     color: null
     position: null

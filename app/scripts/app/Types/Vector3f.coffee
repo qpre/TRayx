@@ -1,4 +1,4 @@
-define(["app/Maths/Point3f"], (Point3f) ->
+define(["app/Types/Point3f"], (Point3f) ->
   class Vector3f
     x: 0.0
     y: 0.0
