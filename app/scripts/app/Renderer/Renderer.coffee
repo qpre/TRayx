@@ -31,7 +31,7 @@ define(['app/Types/ColorRGBA'], (ColorRGBA) ->
       @context.putImageData(@imageData, 0, 0)
       
     setPixel: (x, y, color) ->
-      offset = (x + y) * 4
+      offset = (x * y) * 4
       if (offset < @pixelData.length)
         @pixelData[offset]      = color.r
         @pixelData[offset + 1]  = color.g
