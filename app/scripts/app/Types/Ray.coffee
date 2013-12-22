@@ -1,4 +1,4 @@
-define(["app/Types/Vector3f"], (Vector3f) ->
+define(["app/Types/Vector3f", 'app/Types/ColorRGBA'], (Vector3f, ColorRGBA) ->
   class Ray
     color: null
     position: null
@@ -28,4 +28,7 @@ define(["app/Types/Vector3f"], (Vector3f) ->
         @direction.x = x
         @direction.y = y
         @direction.z = z
+        
+    collisions: () ->
+      @color = new ColorRGBA(Math.floor(Math.random() * 255), Math.floor(Math.random() * 255), Math.floor(Math.random() * 255), 255)
 );
