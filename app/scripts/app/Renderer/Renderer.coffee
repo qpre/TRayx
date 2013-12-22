@@ -1,4 +1,4 @@
-define(() ->
+define(['app/Types/ColorRGBA'], (ColorRGBA) ->
   class Renderer
     imageData: null
     pixelData: null
@@ -16,9 +16,12 @@ define(() ->
       
       @imageData = @context.createImageData(800, 600)
       @pixelData = @imageData.data
-      @initData()
-
-    initData: () ->
+      @clearData()
+      
+    ###
+      clearData: clears the screen with black color
+    ###
+    clearData: () ->
       for i in [0..@pixelData.length] by 4
         @pixelData[i]    = 0
         @pixelData[i+1]  = 0
@@ -36,4 +39,7 @@ define(() ->
         @pixelData[offset + 3]  = color.a
       else
         console.err "TRayx: trying to access overflown offset on pixel map"
+        
+    print: () ->
+      @context.putImageData(@imageData, 0, 0)
 )
