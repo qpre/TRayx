@@ -31,4 +31,5 @@ define(["app/Types/Vector3f", 'app/Types/ColorRGBA'], (Vector3f, ColorRGBA) ->
         
     collisions: () ->
       @color = new ColorRGBA(Math.floor(Math.random() * 255), Math.floor(Math.random() * 255), Math.floor(Math.random() * 255), 255)
+      #@color = new ColorRGBA(255, 255, 255, 255)
 );
