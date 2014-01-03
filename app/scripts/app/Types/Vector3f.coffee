@@ -11,7 +11,7 @@ define(["app/Types/Point3f"], (Point3f) ->
       @param {number} y the y value for the vector
       @param {number} z the z value for the vector
     ###
-    constructor: (x, y , z) ->
+    constructor: (x, y, z) ->
       @x = x
       @y = y
       @z = z
